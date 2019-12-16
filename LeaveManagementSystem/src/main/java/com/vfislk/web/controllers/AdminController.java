@@ -131,6 +131,9 @@ public class AdminController {
 
 		if(errors.hasErrors()) {
 			model.addAttribute(ATTR_TITLE, "Employee");
+			model.addAttribute("posttitle", "employee");
+			List<Department> dept= deptServ.getAllDepartments();
+			model.addAttribute("dept",dept);
 			return "registration-form";
 		}
 		else
@@ -167,6 +170,9 @@ public class AdminController {
 
 		if(errors.hasErrors()) {
 			model.addAttribute(ATTR_TITLE, "Manager");
+			model.addAttribute("posttitle", "manager");
+			List<Department> dept= deptServ.getAllDepartments();
+			model.addAttribute("dept",dept);
 			return "manager-registration-form";
 		}
 		else
@@ -188,6 +194,7 @@ public class AdminController {
 		if (admin == null) {
 			// invalid login
 			req.setAttribute("errMsg", "Invalid username/password");
+			req.setAttribute(ATTR_TITLE, "Admin");
 			req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
 		} else {
 			req.getSession().setAttribute("admin", admin);

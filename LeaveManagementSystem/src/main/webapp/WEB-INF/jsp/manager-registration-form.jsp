@@ -35,6 +35,7 @@
 		<label class="col-md-3">Password</label>
 		<div class="col-md-6">
 			<sf:input type="password" path="password" cssClass="form-control" />
+			<sf:errors path="password" cssClass="text-danger" />
 		</div>
 	</div>
 
@@ -51,6 +52,7 @@
 		<label class="col-md-3">Date of Birth</label>
 		<div class="col-md-6">
 			<sf:input type="date" path="dob" cssClass="form-control"/>
+			<sf:errors path="dob" cssClass="text-danger" />
 		</div>
 	</div>
 
@@ -83,7 +85,8 @@
 	<div class="form-group row">
 		<label class="col-md-3">Phone No.</label>
 		<div class="col-md-6">
-			<sf:input path="phone" cssClass="form-control" />
+			<sf:input path="phone" placeholder="Enter 10 digit mobile number" cssClass="form-control" />
+			<sf:errors path="phone" cssClass="text-danger" />
 		</div>
 	</div>
 

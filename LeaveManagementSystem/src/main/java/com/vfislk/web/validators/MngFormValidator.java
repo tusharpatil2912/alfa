@@ -21,6 +21,12 @@ public class MngFormValidator implements Validator {
 				errors, "fname", "manager.empty.fname", "Name is mandatory");
 		ValidationUtils.rejectIfEmptyOrWhitespace(
 				errors, "email", "manager.empty.email", "Email is mandatory");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "phone", "manager.empty.phone", "Enter 10 digit phone no.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "password", "manager.empty.password", "Enter strong password");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "dob", "manager.empty.dob", "Enter date of birth");
 		
 		
 		Manager emp = (Manager) target;

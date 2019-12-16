@@ -94,13 +94,14 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/employee-login")
-	public void employeeLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public void employeeLogin(Model model,HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		Employee employee = service.getEmployeeByEmailAndPassword(email, password);
 		if (employee == null) {
 			// invalid login
 			req.setAttribute("errMsg", "Invalid username/password");
+			req.setAttribute(ATTR_TITLE, "Employee");
 			req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
 		} else {
 			req.getSession().setAttribute("employee", employee);

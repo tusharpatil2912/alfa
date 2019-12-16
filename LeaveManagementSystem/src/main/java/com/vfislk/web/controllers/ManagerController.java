@@ -158,6 +158,7 @@ public class ManagerController {
 		if (manager == null) {
 			// invalid login
 			req.setAttribute("errMsg", "Invalid username/password");
+			req.setAttribute(ATTR_TITLE, "Manager");
 			req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
 		} else {
 			req.getSession().setAttribute("manager", manager);

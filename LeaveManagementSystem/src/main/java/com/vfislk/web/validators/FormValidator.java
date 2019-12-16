@@ -21,6 +21,12 @@ public class FormValidator implements Validator {
 				errors, "fname", "employee.empty.fname", "Name is mandatory");
 		ValidationUtils.rejectIfEmptyOrWhitespace(
 				errors, "email", "employee.empty.email", "Email is mandatory");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "phone", "employee.empty.phone", "Enter 10 digit phone no.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "password", "employee.empty.password", "Enter strong password");
+		ValidationUtils.rejectIfEmptyOrWhitespace(
+				errors, "dob", "employee.empty.dob", "Enter date of birth");
 		
 		
 		Employee emp = (Employee) target;
